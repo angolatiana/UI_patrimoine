@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Table, Button, Form } from 'react-bootstrap';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-const apiUrl = "https://patrimoine-economique-486u.onrender.com"
 
 function CreatePossession() {
   const [libelle, setLibelle] = useState('');
@@ -18,7 +17,7 @@ function CreatePossession() {
       setError('Please fill all fields correctly.');
       return;
     }
-    fetch(`${apiUrl}/patrimoine`, {
+    fetch('http://localhost:3000/possession', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
