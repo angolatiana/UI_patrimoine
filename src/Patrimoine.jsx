@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import Chart from 'chart.js/auto';
-const apiUrl = "https://patrimoine-economique-486u.onrender.com"
+const apiUrl ="https://patrimoine-economique-486u.onrender.com" 
 
 function Patrimoine() {
   const [dateDebut, setDateDebut] = useState(new Date().toISOString().split('T')[0]);
