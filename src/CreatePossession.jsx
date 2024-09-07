@@ -3,6 +3,7 @@ import { Container, Row, Col, Table, Button, Form } from 'react-bootstrap';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 const apiUrl = "https://patrimoine-economique-486u.onrender.com"
+const Lo = "http://localhost:3000"
 
 function CreatePossession() {
   const [libelle, setLibelle] = useState('');

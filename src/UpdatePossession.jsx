@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+const apiUrl = "https://patrimoine-economique-486u.onrender.com"
 
 function UpdatePossession({ match }) {
   const [libelle, setLibelle] = useState('');
@@ -6,7 +7,7 @@ function UpdatePossession({ match }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    fetch(`/possession/${match.params.libelle}`, {
+    fetch(`${apiUrl}/possession/${match.params.libelle}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ libelle, dateFin })

@@ -8,7 +8,7 @@ import Possession from "../src/models/possessions/Possession";
 import Patrimoine from "../src/models/Patrimoine";
 import Flux from "../src/models/possessions/Flux";
 const apiUrl = "https://patrimoine-economique-486u.onrender.com"
-
+const Lo = "http://localhost:3000"
 
 function Possessions() {
   const [dateSelectionnee, setDateSelectionnee] = useState(new Date());
