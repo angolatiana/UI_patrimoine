@@ -10,7 +10,7 @@ function Patrimoine() {
 
   const fetchData = async () => {
     try {
-      const response = await fetch('https://patrimoine-economique-486u.onrender.com/patrimoine/range', {
+      const response = await fetch(`${apiUrl}/patrimoine/range`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ dateDebut, dateFin })

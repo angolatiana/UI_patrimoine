@@ -18,7 +18,7 @@ function CreatePossession() {
       setError('Please fill all fields correctly.');
       return;
     }
-    fetch('https://patrimoine-economique-486u.onrender.com/patrimoine', {
+    fetch(`${apiUrl}/patrimoine`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({

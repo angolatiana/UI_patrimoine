@@ -25,7 +25,7 @@ function Possessions() {
   });
 
   useEffect(() => {
-    fetch('https://patrimoine-economique-486u.onrender.com/possession')
+    fetch(`${apiUrl}/possession`)
       .then(res => res.json())
       .then(data => {
         const possessions = data.map((possession) => {
@@ -86,7 +86,7 @@ function Possessions() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch(`https://patrimoine-economique-486u.onrender.com/possession/${editingPossession.libelle}/edit`, {
+    fetch(`${apiUrl}/possession/${editingPossession.libelle}/edit`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -124,7 +124,7 @@ function Possessions() {
   };
 
   const handleClose = (libelle) => {
-    fetch(`https://patrimoine-economique-486u.onrender.com/possession/${libelle}/close`, {
+    fetch(`${apiUrl}/possession/${libelle}/close`, {
       method: 'POST'
     })
       .then(res => res.json())
