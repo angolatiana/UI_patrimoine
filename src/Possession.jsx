@@ -7,6 +7,8 @@ import 'react-datepicker/dist/react-datepicker.css';
 import Possession from "../src/models/possessions/Possession";
 import Patrimoine from "../src/models/Patrimoine";
 import Flux from "../src/models/possessions/Flux";
+const apiUrl = "https://patrimoine-economique-486u.onrender.com"
+
 
 function Possessions() {
   const [dateSelectionnee, setDateSelectionnee] = useState(new Date());
@@ -24,7 +26,7 @@ function Possessions() {
   });
 
   useEffect(() => {
-    fetch('http://localhost:3000/possession')
+    fetch(`${apiUrl}/possession`)
       .then(res => res.json())
       .then(data => {
         const possessions = data.map((possession) => {
@@ -85,7 +87,7 @@ function Possessions() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch(`http://localhost:3000/possession/${editingPossession.libelle}/edit`, {
+    fetch(`${apiUrl}/possession/${editingPossession.libelle}/edit`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -123,7 +125,7 @@ function Possessions() {
   };
 
   const handleClose = (libelle) => {
-    fetch(`http://localhost:3000/possession/${libelle}/close`, {
+    fetch(`${apiUrl}/possession/${libelle}/close`, {
       method: 'POST'
     })
       .then(res => res.json())
